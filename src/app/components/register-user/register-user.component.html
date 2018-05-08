@@ -1,0 +1,44 @@
+<div class="padding-top-60">
+  <div *ngIf="true">
+    <div class="Card-Aligner">
+      <mat-card class="card-items">
+        <h1>PROFILE DETAILS</h1>
+        <form [formGroup]="registerform" (ngSubmit)="onSubmit()">
+          <mat-input-container class="input-full">
+            <input matInput #fName type="text" placeholder="First Name:" formControlName="fname" name="fname" required>
+            <!--<mat-error *ngIf="formErrors.email">{{ formErrors.email }}</mat-error>-->
+          </mat-input-container>
+
+          <mat-input-container class="input-full">
+            <input matInput #lName type="text" placeholder="Last Name:" formControlName="lname" name="lname" required>
+            <!--<mat-error *ngIf="formErrors.email">{{ formErrors.email }}</mat-error>-->
+          </mat-input-container>
+
+          <mat-input-container class="input-full">
+            <input matInput #phone type="text" name="phone" formControlName="phone" placeholder="Phone:">
+            <!--<mat-error *ngIf="formErrors.email">{{ formErrors.email }}</mat-error>-->
+          </mat-input-container>
+
+          <mat-input-container class="input-full">
+            <input matInput #address type="text" name="address" formControlName="address" placeholder="Address:">
+            <!--<mat-error *ngIf="formErrors.email">{{ formErrors.email }}</mat-error>-->
+          </mat-input-container>
+
+          <mat-input-container class="input-full">
+            <input matInput #email type="text" name="email" formControlName="email" placeholder="UserName/Email:" value={{user.email}} disabled>
+            <!--<mat-error *ngIf="formErrors.email">{{ formErrors.email }}</mat-error>-->
+          </mat-input-container>
+
+          <mat-input-container class="input-full">
+            <input matInput #phone type="text" name="password" formControlName="password" placeholder="Password" required>
+            <!--<mat-error *ngIf="formErrors.email">{{ formErrors.email }}</mat-error>-->
+          </mat-input-container>
+
+          <button type="submit" mat-raised-button color="accent">Update</button>
+
+        </form>
+        <br>
+      </mat-card>
+    </div>
+  </div>
+ </div>

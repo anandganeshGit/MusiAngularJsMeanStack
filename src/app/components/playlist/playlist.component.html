@@ -1,0 +1,86 @@
+<!--
+&lt;!&ndash; View Playlist Page&ndash;&gt;
+&lt;!&ndash; Checking if the Playlist is empty &ndash;&gt;
+<div *ngIf="tracks?.length>1; else elseBlock">
+  <div id="scrollableDiv" style=" width:90%;">
+    &lt;!&ndash; Searching tracks as per the query provided &ndash;&gt;
+      <div>
+        <mat-table id="tablex"  [dataSource]="dataSource">
+
+          &lt;!&ndash; Position Column &ndash;&gt;
+          <ng-container matColumnDef="cover">
+            <mat-header-cell *matHeaderCellDef> COVER. </mat-header-cell>
+            <mat-cell *matCellDef="let tracks"> <img src = "{{tracks.album.images[0].url}}" height="50px" width="50px">&lt;!&ndash;<a routerLink = '/track/{{track.id}}' style="padding-left:10px"></a>&ndash;&gt; </mat-cell>
+          </ng-container>
+
+          &lt;!&ndash; Name Column &ndash;&gt;
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> NAME </mat-header-cell>
+            <mat-cell *matCellDef="let tracks"> {{tracks.name}} </mat-cell>
+          </ng-container>
+
+          &lt;!&ndash; Name Column &ndash;&gt;
+          <ng-container matColumnDef="artistName">
+            <mat-header-cell *matHeaderCellDef> ARTIST </mat-header-cell>
+            <mat-cell *matCellDef="let tracks"> {{tracks.artists[0].name}} </mat-cell>
+          </ng-container>
+
+          &lt;!&ndash; Weight Column &ndash;&gt;
+          <ng-container matColumnDef="popularity">
+            <mat-header-cell *matHeaderCellDef> POPULARITY </mat-header-cell>
+            <mat-cell *matCellDef="let tracks"> {{tracks.popularity}} </mat-cell>
+          </ng-container>
+
+          &lt;!&ndash; Symbol Column &ndash;&gt;
+          <ng-container matColumnDef="album">
+            <mat-header-cell *matHeaderCellDef> ALBUM </mat-header-cell>
+            <mat-cell *matCellDef="let tracks"> {{tracks.album.name}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+  </div>
+</div>
+&lt;!&ndash; If playlist is empty performing and displaying below content &ndash;&gt;
+<ng-template #elseBlock>
+  <div class="hero-text">
+    <h2>Your Playlist is Empty!!</h2>
+    <br>
+    <button class="btn-outline-primary" routerLink="/search" style="border-radius:8%">Create Playlist</button>
+  </div>
+</ng-template>
+-->
+
+
+<!-- View Playlist Page-->
+<!-- Checking if the Playlist is empty -->
+<div *ngIf="tracks?.length>1; else elseBlock">
+  <br>
+  <br>
+  <br>
+
+  <div style="text-align: center; padding-top:8%">
+    <button class="btn-outline-primary" style="border-radius:5%; padding-right:50%" routerLink="/editplaylist">Edit Playlist</button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+  <!-- Preview track widget -->
+  <div *ngFor="let track of tracks.splice(1)">
+    <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(track.widgetURL)' width="100%" height="80" frameborder="0" allowtransparency="true"></iframe>
+    <button (click)="deleteRecord(track)">Delete</button>
+    <br>
+  </div>
+</div>
+<!-- If playlist is empty performing and displaying below content -->
+<ng-template #elseBlock>
+  <div class="hero-text">
+    <h2>EMPTY PLAYLIST</h2>
+    <br>
+    <button routerLink="/search" style="border-radius:8%">Create Playlist</button>
+  </div>
+</ng-template>

@@ -1,0 +1,23 @@
+#tablex
+{
+  margin-left: 10%;
+  margin-top: 20%;
+}
+
+.hero-text h2
+{
+  text-align: center;
+}
+
+.btn-outline-primary{
+  color:black;
+  opacity:0.9;
+  margin-left:40%;
+  font-style: trebuchet ms;
+
+
+  }
+  .btn-outline-primary:hover{
+    box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24),0 17px 50px 0 rgba(255, 255, 255, 0.19);
+       opacity:0.2
+  }

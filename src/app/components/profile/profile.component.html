@@ -1,0 +1,19 @@
+<div class="padding-top-60">
+  <div *ngIf="user">
+    <div class="Card-Aligner">
+      <mat-card class="card-items">
+        <h1>PROFILE</h1>
+		<img class=" card-img-top img-responsive photo" src="{{ user.photoUrl }}" />
+    <div class="card-block">
+      <h4 class="card-title">{{ user.name }}</h4>
+      <p class="card-text">{{ user.email }}</p>
+      <p class="card-text">FIRST NAME:{{ fname }}</p>
+         <p class="card-text">LAST NAME:{{ lname }}</p>
+         <p class="card-text">PHONE:{{ phone }}</p>
+         <p class="card-text">ADDRESS:{{ address }}</p>
+    </div>
+       
+        
+        <br>
+
+      </mat-card>

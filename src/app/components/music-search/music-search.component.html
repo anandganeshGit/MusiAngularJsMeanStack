@@ -1,0 +1,101 @@
+<!-- Search Songs Page -->
+<form>
+  <div class="form-group" >
+    <input type="text" 
+       name="searchStrTrack" [(ngModel)]="searchStr" (keyup)="searchTracks()" class="form-control" placeholder="Search for artists, bands, tracks...." >
+      </div>
+</form>
+ <!--Split Button to  sort search results
+<p-splitButton label="Sort Tracks" styleClass="ui-button-info" >Sort</p-splitButton>
+<div id="scrollableDiv" style=" width:80%;">
+  &lt;!&ndash; Searching tracks as per the query provided &ndash;&gt;
+  <div *ngIf = "searchResTrack">
+    <div *ngFor = "let track of searchResTrack" >
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="search-res well" >
+
+            <h4> <img src = "{{track.album.images[0].url}}" height="50px" width="50px"><a routerLink = '/track/{{track.id}}' style="padding-left:10px">{{track.name}}</a></h4>
+            <div>
+
+              <strong>Artist:</strong>
+              <span>{{track.artists[0].name}}</span>
+              <strong>Popularity:</strong>
+              <span>{{track.popularity}}</span>
+              <strong>Album:</strong>
+              <span>{{track.album.name}}</span>
+              &lt;!&ndash; Option to add to playlist &ndash;&gt;
+              <span  class="pull-right">
+                                    <button class="btn-outline-primary"  style="border-radius:10%" label="Add to Playlist" (click)="add(track.id, track.name, track.album, track.artists,track.popularity )">Add to Playlist</button>
+                            </span>
+              <hr style="margin-top: 30px">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<dropdown-select-list>
+  <dropdown-select-link [default]="true">                
+     <span (click) ="SortByArtist()"> Sort By Artist </span>
+  </dropdown-select-link>
+  <dropdown-select-link>
+     <span (click)="SortByAlbum()"> Sort By Album  </span>
+  </dropdown-select-link>
+  <dropdown-select-link>
+     <span (click)="SortByPop()"> Sort By Popularity  </span>
+  </dropdown-select-link>                                          
+ </dropdown-select-list>
+
+
+<div id="scrollableDiv" style=" width:90%;">
+  <!-->&lt;!&ndash; Searching tracks as per the query provided &ndash;&gt;<-->
+  <div *ngIf = "dataSource">
+<div>
+  <mat-table id="tablex"  [dataSource]="dataSource">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="cover">
+      <mat-header-cell *matHeaderCellDef style="font-style: 'PT Sans', sans-serif; font-weight: bold; font-size: large;padding-left: 2%"> Cover </mat-header-cell>
+      <mat-cell *matCellDef="let searchStr" style="padding-left: 2%"> <img src = "{{searchStr.album.images[0].url}}" height="50px" width="50px"><!--<a routerLink = '/track/{{track.id}}' style="padding-left:10px"></a> --></mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef style="font-style: 'PT Sans', sans-serif; font-weight: bold; font-size: large"> Song </mat-header-cell>
+      <mat-cell *matCellDef="let searchStr"> {{searchStr.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="artistName">
+      <mat-header-cell *matHeaderCellDef style="font-style: 'PT Sans', sans-serif; font-weight: bold; font-size: large;padding-right:5%"> Artist </mat-header-cell>
+      <mat-cell *matCellDef="let searchStr"> {{searchStr.artists[0].name}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="popularity">
+      <mat-header-cell *matHeaderCellDef style="font-style: 'PT Sans', sans-serif; font-weight: bold; font-size: large; padding-left:2%"> Rating </mat-header-cell>
+      <mat-cell *matCellDef="let searchStr" style="padding-left:7%"> {{searchStr.popularity}} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="album">
+      <mat-header-cell *matHeaderCellDef style="font-style: 'PT Sans', sans-serif; font-weight: bold; font-size: large; padding-left:1%"> Album </mat-header-cell>
+      <mat-cell *matCellDef="let searchStr" style="padding-right:10%"> {{searchStr.album.name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="addPlaylist">
+ <mat-header-cell *matHeaderCellDef style="font-style: 'PT Sans', sans-serif; font-weight: bold; font-size:large;padding-left: 7%"> Add to Playlist </mat-header-cell>
+ <mat-cell *matCellDef="let searchStr"> <button mat-raised-button="" class="btn-outline-primary"  style="border-radius:1%"  (click)="add(searchStr.id, searchStr.name, searchStr.album, searchStr.artists,searchStr.popularity )"> <img src = "../../../assets/images/add-32.png" ></button> </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+  </div>
+</div>

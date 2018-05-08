@@ -1,0 +1,148 @@
+#home-header {
+  height: 100% !important;
+  background: url('../../../assets/images/music-theme-wordpress-blog.jpg')  ;
+  background-size: cover;
+  background-color: white;
+
+}
+
+.container {
+  display : inline-block;
+  position: relative;
+  width: 33%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+
+}
+
+.container:hover .overlay {
+  opacity: 0.7;
+}
+
+.text {
+  font-style: 'Pragati Narrow', sans-serif;
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+
+
+}
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.aboutStudio{
+
+  padding-right: 85%;
+  font-size: xx-large;
+}
+
+.aboutus{
+  color: #ffffff;
+  font-family: 'Pragati Narrow', sans-serif;
+  font-size: x-large;
+  padding-left: 15px;
+  background-color: black;
+
+  text-align: left;
+}
+.founders{
+  font-family: 'Pragati Narrow', sans-serif;
+  font-size: xx-large;
+  text-align: center;
+}
+
+
+.moviesHome-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  margin-top: 45px;
+  margin-bottom: 0;
+}
+
+.moviesHome-title {
+  font-family: Trebuchet MS;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+::ng-deep #home img {
+  height: 400px;
+}
+
+/* =============
+    Responsive
+ =============== */
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+  ::ng-deep .movie-card{  width: 19%;  }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  ::ng-deep .movie-card{  width: 17%;  }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  ::ng-deep .movie-card{  width: 40%;  }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  ::ng-deep .movie-card{  width: 38%;  }
+  .janco-ocult{  display: none;  }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+  ::ng-deep .movie-card{  width: 80%;  }
+  .janco-ocult{  display: none;  }
+}
+
+/**/
+
+.swiper-container {
+  margin: 20px 0 0 0;
+}
+
+::ng-deep .swiper-pagination-bullet-active {
+  background: #F44336;
+}
+
+::ng-deep .swiper-pagination {
+  margin-top: 10px;
+  position: relative;
+  bottom: 0 !important;
+}
+
+.swiper-slide {
+  color: #aaa;
+  background-color: transparent;
+}
+
+::ng-deep .swiper-wrapper app-poster-card .movie-card {
+  margin: 0;
+  width: 82%;
+  vertical-align: top;
+}

@@ -1,0 +1,52 @@
+.Card-Aligner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  width: 50%;
+  padding-right:50%;
+  opacity:0.9;
+}
+
+
+.card {
+  width: 40rem;
+  margin: 0 auto;
+  opacity:0.9;
+}
+
+.input-full{
+  width: 95%;
+}
+
+@mixin height-width($value) {
+  height: 150px;
+  width: 150px;
+}
+
+.card-img-top{
+  border-radius: 100px;
+  margin-top: 100px;
+  @include height-width(10px);
+}
+
+// card for email
+.card-title{
+  margin-top: 20px;
+}
+
+.card-text{
+  margin-bottom: 20px;
+}
+
+.card-items button{
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.padding-top-60
+{
+  margin-top: 8%;
+  widows: 40%;
+  padding-left:50%;
+}

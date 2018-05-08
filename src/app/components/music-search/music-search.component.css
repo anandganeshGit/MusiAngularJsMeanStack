@@ -1,0 +1,51 @@
+.form-group{
+  margin-left: 8%;
+
+  margin-top: 8%;
+  
+}
+
+
+#input_img {
+  position:absolute;
+  bottom:8px;
+  left:10px;
+  width:10px;
+  height:10px;
+}
+#tablex
+{
+  margin-left: 10%;
+  opacity:0.9;
+  margin-top:8.5%;
+}
+ 
+::placeholder {
+  color:rgb(97, 95, 95);
+  font-style: italic;
+
+
+
+}
+
+/* .form-group:hover{
+  color: rgb(97, 95, 95);
+} */
+
+input[type="text"]
+{
+  width:90%;
+    font-size:1em;
+    font-style: 'PT Sans', sans-serif;
+    background-color: rgb(224, 222, 222);
+    border-radius: 2px;
+    background-image: url('../../../assets/images/698956-icon-111-search-128.png')  ;
+    background-repeat: no-repeat;
+     background-size: 33px 33px; 
+       background-position: right;
+     
+       }
+
+       .btn-outline-primary:hover{
+        box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24),0 17px 50px 0 rgba(255, 255, 255, 0.19);
+       opacity:0.2}

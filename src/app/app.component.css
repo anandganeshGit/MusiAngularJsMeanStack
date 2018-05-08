@@ -1,0 +1,54 @@
+.transparent-bar {
+  position: fixed!important;
+  z-index: 999;
+  opacity:0.7;
+
+}
+
+.img-header {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background-size: cover;
+  margin-left: 10px;
+}
+
+#arrowButton{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+mat-sidenav {
+  width: 250px;
+  color:white;
+}
+
+.mat-nav-list{
+  padding-top: 0!important;
+}
+
+mat-nav-list a{
+  border-bottom: 1px solid;
+}
+
+.center-flex{
+  flex: 1 1 auto;
+}
+
+.home-name-padding {
+  padding-left: 70px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .janco-ocult{  display: none;  }
+  .home-name-padding {padding-left: 0;}
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+  .janco-ocult{  display: none;  }
+  .home-name-padding {padding-left: 0;}
+}
