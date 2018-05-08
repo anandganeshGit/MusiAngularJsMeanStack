@@ -1,0 +1,18 @@
+{
+  "/v1/*":{
+    "target":"https://api.spotify.com",
+    "secure":false,
+    "changeOrigin":true
+  },
+  "/api/*":{
+    "target":"https://accounts.spotify.com",
+    "secure":false,
+    "changeOrigin":true
+  }/*,
+
+  "/api*//*": {
+    "target": "http://localhost:3000",
+    "secure": false,
+    "changeOrigin": true
+  }*/
+}

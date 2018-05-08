@@ -1,0 +1,19 @@
+.Card-Aligner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8%;
+  
+}
+
+.card-items{
+  opacity:0.9;
+}
+.card-items button{
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.input-full{
+  width: 95%;
+}

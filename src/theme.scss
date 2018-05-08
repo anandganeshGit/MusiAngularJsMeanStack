@@ -1,0 +1,61 @@
+@import '~@angular/material/theming';
+@import '~swiper/dist/css/swiper.min.css';
+@include mat-core();
+
+// Customizations go here, for instance:
+$app-primary: mat-palette($mat-brown);
+$app-accent: mat-palette($mat-amber, A200, A100, A400);
+$app-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$app-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
+
+@include angular-material-theme($app-theme);
+
+.cast-actor-card{ background-color:  #F44336}
+::-webkit-scrollbar-thumb {  background-color: #F44336;  }
+.moviesHome-header a { color: #F44336; }
+
+.blue-theme {
+  // Dark theme
+  $app-primary: mat-palette($mat-blue);
+  $app-accent: mat-palette($mat-amber, A200, A100, A400);
+  $app-warn: mat-palette($mat-red);
+  $app-dark-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
+
+  @include angular-material-theme($app-dark-theme);
+
+  p strong {  color: #2196f3 !important;  }
+  .cast-actor-card{ background-color:  #2196f3}
+  .mat-raised-button.mat-primary {  color: white;  }
+  ::-webkit-scrollbar-thumb {  background-color: #2196f3;  }
+  .moviesHome-header a { color: #2196f3; }
+}
+
+.green-theme {
+  // Dark theme
+  $app-primary: mat-palette($mat-green);
+  $app-accent: mat-palette($mat-amber, A200, A100, A400);
+  $app-warn: mat-palette($mat-red);
+  $app-dark-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
+
+  @include angular-material-theme($app-dark-theme);
+
+  p strong {  color: #4caf50 !important;  }
+  .cast-actor-card{ background-color:  #4caf50}
+  .mat-raised-button.mat-primary {  color: white !important;  }
+  ::-webkit-scrollbar-thumb {  background-color: #4caf50;  }
+  .moviesHome-header a { color: #4caf50 }
+}
+
+.mat-tab-body.mat-tab-body-active {
+  overflow-y: hidden !important;
+}
+
+.mat-dialog-container {
+  padding: 0!important;
+}
+
+.mat-icon {
+  color: white;
+}

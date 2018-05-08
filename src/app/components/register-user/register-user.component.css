@@ -1,0 +1,27 @@
+.Card-Aligner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  width: 45%;
+  margin-left: 25%;
+  margin-top:8%;
+  opacity:0.9;
+}
+.card-items{
+  opacity:1.2;
+  margin-top:8%;
+}
+.card-items button{
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.input-full{
+  width: 95%;
+}
+.update:hover{
+  box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24),0 17px 50px 0 rgba(255, 255, 255, 0.19);
+  opacity:0.2;
+
+}
